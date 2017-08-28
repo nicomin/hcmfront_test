@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -26,6 +25,8 @@ SECRET_KEY = '*^)-p9h39ze=_#_f-mf%e#91fx8a4o2ko!1-5ozdd8ylw18gd8'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+DATETIME_INPUT_FORMATS = '%Y-%m-%d %H:%M'
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'hcmfront.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
